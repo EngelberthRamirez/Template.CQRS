@@ -1,0 +1,5 @@
+1.- Tener una instancia instalada de SQL Server Express LocalDB o de lo contrario establecer la conection string de un servidor ya sea local o remoto
+2.- Configurar Proyecto WebApi como Proyecto de inicio
+3.- Recompilar solucion
+4.- Abrir Package Manager Console(Tools/NuGet Package Manager/Package Manager Console)
+5.- Ejecutar el commando Update-Database para que ejecute el script init.sql(crea una bd, una table y varios stored procedures)
