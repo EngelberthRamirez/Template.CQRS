@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using PJENL.API.CleanArchitecture.ApplicationCore.Domain;
+﻿using ApplicationCore.Domain;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApplicationCore.Infrastructure.Persistence
 {

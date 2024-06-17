@@ -1,8 +1,8 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using ApplicationCore.Common.Exceptions;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
-using PJENL.API.CleanArchitecture.ApplicationCore.Common.Exceptions;
 
-namespace PJENL.API.CleanArchitecture.WebApi.Filters;
+namespace WebApi.Filters;
 public class ApiExceptionFilterAttribute : ExceptionFilterAttribute
 {
     private readonly ILogger<ApiExceptionFilterAttribute> _logger;

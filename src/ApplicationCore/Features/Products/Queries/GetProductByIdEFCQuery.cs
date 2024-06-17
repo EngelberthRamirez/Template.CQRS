@@ -1,12 +1,11 @@
-﻿using ApplicationCore.Infrastructure.Persistence;
+﻿using ApplicationCore.Common.Exceptions;
+using ApplicationCore.Domain;
+using ApplicationCore.Infrastructure.Persistence;
 using AutoMapper;
 using MediatR;
 using MediatrExample.ApplicationCore.Common.Helpers;
-using PJENL.API.CleanArchitecture.ApplicationCore.Common.Exceptions;
-using PJENL.API.CleanArchitecture.ApplicationCore.Domain;
 
-
-namespace PJENL.API.CleanArchitecture.ApplicationCore.Features.Products.Queries;
+namespace ApplicationCore.Features.Products.Queries;
 
 public class GetProductByIdEFCQuery : IRequest<GetProductByIdEFCQueryResponse>
 {

@@ -1,4 +1,4 @@
-﻿namespace PJENL.API.CleanArchitecture.ApplicationCore.Common.Attributes;
+﻿namespace ApplicationCore.Common.Attributes;
 
 
 /// <summary>

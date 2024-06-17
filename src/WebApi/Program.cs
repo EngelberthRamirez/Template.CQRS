@@ -1,5 +1,5 @@
-using PJENL.API.CleanArchitecture.ApplicationCore;
-using PJENL.API.CleanArchitecture.WebApi;
+using ApplicationCore;
+using WebApi;
 
 var builder = WebApplication.CreateBuilder(args);
 

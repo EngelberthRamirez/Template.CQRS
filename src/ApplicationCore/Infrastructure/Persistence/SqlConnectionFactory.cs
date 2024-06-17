@@ -1,9 +1,9 @@
-﻿using Microsoft.Extensions.Configuration;
-using PJENL.API.CleanArchitecture.ApplicationCore.Common.Abstractions.Data;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
+using ApplicationCore.Common.Abstractions.Data;
+using Microsoft.Extensions.Configuration;
 
-namespace PJENL.API.CleanArchitecture.ApplicationCore.Infrastructure.Persistence
+namespace ApplicationCore.Infrastructure.Persistence
 {
     public class SqlConnectionFactory(IConfiguration configuration) : IDbConnectionFactory
     {

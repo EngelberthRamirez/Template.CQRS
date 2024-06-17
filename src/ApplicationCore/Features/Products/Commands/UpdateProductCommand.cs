@@ -1,13 +1,13 @@
-﻿using Dapper;
+﻿using System.Data;
+using ApplicationCore.Common.Abstractions.Data;
+using ApplicationCore.Common.Exceptions;
+using ApplicationCore.Domain;
+using Dapper;
 using FluentValidation;
 using MediatR;
-using PJENL.API.CleanArchitecture.ApplicationCore.Common.Abstractions.Data;
-using PJENL.API.CleanArchitecture.ApplicationCore.Common.Exceptions;
-using PJENL.API.CleanArchitecture.ApplicationCore.Domain;
 using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Messaging;
-using System.Data;
 
-namespace MediatrExample.ApplicationCore.Features.Products.Commands;
+namespace ApplicationCore.Features.Products.Commands;
 
 public class UpdateProductCommand : IRequest, ICacheInvalidationCommand
 {

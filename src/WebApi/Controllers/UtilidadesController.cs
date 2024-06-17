@@ -1,7 +1,7 @@
 ﻿using MediatrExample.ApplicationCore.Common.Helpers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace PJENL.API.CleanArchitecture.WebApi.Controllers
+namespace WebApi.Controllers
 {
     public class UtilidadesController : ControllerBase
     {

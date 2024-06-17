@@ -1,15 +1,14 @@
-﻿using AutoMapper;
+﻿using System.Data;
+using ApplicationCore.Common.Abstractions.Data;
+using ApplicationCore.Common.Exceptions;
+using ApplicationCore.Domain;
+using AutoMapper;
 using Dapper;
 using MediatR;
 using MediatrExample.ApplicationCore.Common.Helpers;
-using PJENL.API.CleanArchitecture.ApplicationCore.Common.Abstractions.Data;
-using PJENL.API.CleanArchitecture.ApplicationCore.Common.Exceptions;
-using PJENL.API.CleanArchitecture.ApplicationCore.Domain;
 using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Messaging;
-using System.Data;
 
-
-namespace PJENL.API.CleanArchitecture.ApplicationCore.Features.Products.Queries;
+namespace ApplicationCore.Features.Products.Queries;
 
 public class GetProductByIdQuery : ICachedQuery<GetProductByIdQueryResponse>
 {

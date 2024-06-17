@@ -1,10 +1,10 @@
-﻿using Dapper;
+﻿using ApplicationCore.Common.Abstractions.Data;
+using Dapper;
 using FluentValidation;
 using MediatR;
-using PJENL.API.CleanArchitecture.ApplicationCore.Common.Abstractions.Data;
 using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Messaging;
 
-namespace PJENL.API.CleanArchitecture.ApplicationCore.Features.Products.Commands;
+namespace ApplicationCore.Features.Products.Commands;
 
 public class CreateProductCommand : IRequest, ICacheInvalidationCommand
 {

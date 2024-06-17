@@ -1,16 +1,16 @@
 ﻿using System.Reflection;
+using ApplicationCore.Common.Abstractions.Data;
+using ApplicationCore.Common.Behaviours;
 using ApplicationCore.Infrastructure.Persistence;
 using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using PJENL.API.CleanArchitecture.ApplicationCore.Common.Abstractions.Data;
-using PJENL.API.CleanArchitecture.ApplicationCore.Common.Behaviours;
-using PJENL.API.CleanArchitecture.ApplicationCore.Infrastructure.Persistence;
 using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Caching;
 using PJENL.Template.CQRS.ApplicationCore.Infrastructure.Caching;
+using Quartz;
 
-namespace PJENL.API.CleanArchitecture.ApplicationCore;
+namespace ApplicationCore;
 public static class DependencyInjection
 {
     public static IServiceCollection AddApplicationCore(this IServiceCollection services)

@@ -1,9 +1,9 @@
 ﻿using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
-using PJENL.API.CleanArchitecture.WebApi.Filters;
+using WebApi.Filters;
 
-namespace PJENL.API.CleanArchitecture.WebApi;
+namespace WebApi;
 
 public static class DependencyInjection
 {
@@ -41,7 +41,6 @@ public static class DependencyInjection
             });
         });
 
-
         services.AddControllers(options =>
             options.Filters.Add<ApiExceptionFilterAttribute>());
 
@@ -49,7 +48,6 @@ public static class DependencyInjection
 
         services.Configure<ApiBehaviorOptions>(options =>
             options.SuppressModelStateInvalidFilter = true);
-
 
         return services;
     }

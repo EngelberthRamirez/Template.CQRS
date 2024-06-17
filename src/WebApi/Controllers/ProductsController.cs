@@ -1,11 +1,9 @@
-﻿using MediatR;
-using MediatrExample.ApplicationCore.Features.Products.Commands;
-using MediatrExample.ApplicationCore.Features.Products.Queries;
+﻿using ApplicationCore.Features.Products.Commands;
+using ApplicationCore.Features.Products.Queries;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using PJENL.API.CleanArchitecture.ApplicationCore.Features.Products.Commands;
-using PJENL.API.CleanArchitecture.ApplicationCore.Features.Products.Queries;
 
-namespace PJENL.API.CleanArchitecture.WebApi.Controllers;
+namespace WebApi.Controllers;
 
 
 [ApiController]

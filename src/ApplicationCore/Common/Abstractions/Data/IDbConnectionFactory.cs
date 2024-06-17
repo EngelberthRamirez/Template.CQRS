@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace PJENL.API.CleanArchitecture.ApplicationCore.Common.Abstractions.Data
+namespace ApplicationCore.Common.Abstractions.Data
 {
     public interface IDbConnectionFactory
     {

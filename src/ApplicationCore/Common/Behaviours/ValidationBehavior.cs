@@ -1,9 +1,9 @@
 ﻿
 using FluentValidation;
 using MediatR;
-using ValidationException = PJENL.API.CleanArchitecture.ApplicationCore.Common.Exceptions.ValidationException;
+using ValidationException = ApplicationCore.Common.Exceptions.ValidationException;
 
-namespace PJENL.API.CleanArchitecture.ApplicationCore.Common.Behaviours;
+namespace ApplicationCore.Common.Behaviours;
 
 public class ValidationBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
      where TRequest : notnull

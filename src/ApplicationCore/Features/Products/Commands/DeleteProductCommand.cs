@@ -1,10 +1,10 @@
-﻿using Dapper;
+﻿using System.Data;
+using ApplicationCore.Common.Abstractions.Data;
+using Dapper;
 using MediatR;
-using PJENL.API.CleanArchitecture.ApplicationCore.Common.Abstractions.Data;
 using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Messaging;
-using System.Data;
 
-namespace MediatrExample.ApplicationCore.Features.Products.Commands;
+namespace ApplicationCore.Features.Products.Commands;
 
 public class DeleteProductCommand : IRequest, ICacheInvalidationCommand
 {

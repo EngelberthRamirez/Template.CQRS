@@ -2,7 +2,7 @@
 using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Caching;
 using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Messaging;
 
-namespace PJENL.API.CleanArchitecture.ApplicationCore.Common.Behaviours;
+namespace ApplicationCore.Common.Behaviours;
 
 public class QueryCachingPipeLineBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
      where TRequest : ICachedQuery

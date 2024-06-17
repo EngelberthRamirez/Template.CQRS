@@ -1,6 +1,6 @@
 ﻿using FluentValidation.Results;
 
-namespace PJENL.API.CleanArchitecture.ApplicationCore.Common.Exceptions;
+namespace ApplicationCore.Common.Exceptions;
 public class ValidationException : Exception
 {
     public ValidationException()

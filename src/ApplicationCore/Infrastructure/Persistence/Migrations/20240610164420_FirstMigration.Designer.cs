@@ -19,7 +19,7 @@ namespace ApplicationCore.Infrastructure.Persistence.Migrations
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "8.0.6");
 
-            modelBuilder.Entity("PJENL.API.CleanArchitecture.ApplicationCore.Domain.Product", b =>
+            modelBuilder.Entity("ApplicationCore.Domain.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

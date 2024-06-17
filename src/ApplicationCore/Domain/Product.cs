@@ -1,4 +1,4 @@
-﻿namespace PJENL.API.CleanArchitecture.ApplicationCore.Domain;
+﻿namespace ApplicationCore.Domain;
 public class Product
 {
     public int Id { get; set; } = default!;

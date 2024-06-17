@@ -1,11 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace PJENL.API.CleanArchitecture.WebApi.Controllers
+namespace WebApi.Controllers
 {
+    [ApiController]
+    [Route("api/auth")]
     public class AuthController : ControllerBase
     {
         public AuthController()
         {
+
         }
     }
 }
