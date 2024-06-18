@@ -1,11 +1,12 @@
 ﻿using ApplicationCore.Features.Products.Commands;
 using ApplicationCore.Features.Products.Queries;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers;
 
-
+[Authorize]
 [ApiController]
 [Route("api/products")]
 public class ProductsController : ControllerBase

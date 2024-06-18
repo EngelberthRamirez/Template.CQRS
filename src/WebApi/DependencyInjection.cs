@@ -1,4 +1,5 @@
 ﻿using FluentValidation.AspNetCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.OpenApi.Models;
 using WebApi.Filters;
@@ -17,7 +18,7 @@ public static class DependencyInjection
                 Title = "My API",
                 Version = "v1"
             });
-            c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+            c.AddSecurityDefinition(JwtBearerDefaults.AuthenticationScheme, new OpenApiSecurityScheme
             {
                 In = ParameterLocation.Header,
                 Description = "Please insert JWT with Bearer into field",
@@ -33,10 +34,10 @@ public static class DependencyInjection
                         Reference = new OpenApiReference
                         {
                             Type = ReferenceType.SecurityScheme,
-                            Id = "Bearer"
+                            Id = JwtBearerDefaults.AuthenticationScheme
                         }
                     },
-                    new string[] { }
+                    Array.Empty<string>()
                 }
             });
         });
