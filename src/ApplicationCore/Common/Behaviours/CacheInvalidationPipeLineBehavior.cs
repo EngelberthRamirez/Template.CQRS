@@ -1,6 +1,6 @@
-﻿using MediatR;
-using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Caching;
-using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Messaging;
+﻿using ApplicationCore.Common.Abstractions.Caching;
+using ApplicationCore.Common.Abstractions.Messaging;
+using MediatR;
 
 namespace ApplicationCore.Common.Behaviours;
 

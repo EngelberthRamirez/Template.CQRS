@@ -1,11 +1,11 @@
 ﻿using System.Data;
 using ApplicationCore.Common.Abstractions.Data;
-using ApplicationCore.Domain;
+using ApplicationCore.Common.Abstractions.Messaging;
+using ApplicationCore.Domain.Entities;
 using AutoMapper;
 using Dapper;
 using MediatR;
 using MediatrExample.ApplicationCore.Common.Helpers;
-using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Messaging;
 
 namespace ApplicationCore.Features.Products.Queries;
 

@@ -1,4 +1,4 @@
-﻿using ApplicationCore.Domain;
+﻿using ApplicationCore.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApplicationCore.Infrastructure.Persistence

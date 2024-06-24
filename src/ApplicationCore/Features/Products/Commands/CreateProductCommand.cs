@@ -1,8 +1,8 @@
 ﻿using ApplicationCore.Common.Abstractions.Data;
+using ApplicationCore.Common.Abstractions.Messaging;
 using Dapper;
 using FluentValidation;
 using MediatR;
-using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Messaging;
 
 namespace ApplicationCore.Features.Products.Commands;
 

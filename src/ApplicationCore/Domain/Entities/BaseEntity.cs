@@ -1,4 +1,4 @@
-﻿namespace ApplicationCore.Domain;
+﻿namespace ApplicationCore.Domain.Entities;
 public class BaseEntity
 {
     public DateTime? CreatedAt { get; set; }

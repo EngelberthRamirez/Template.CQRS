@@ -1,7 +1,7 @@
-﻿using Microsoft.Extensions.Caching.Memory;
-using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Caching;
+﻿using ApplicationCore.Common.Abstractions.Caching;
+using Microsoft.Extensions.Caching.Memory;
 
-namespace PJENL.Template.CQRS.ApplicationCore.Infrastructure.Caching
+namespace ApplicationCore.Infrastructure.Caching
 {
     internal sealed class CacheService : ICacheService
     {

@@ -1,4 +1,4 @@
-﻿namespace PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Caching
+﻿namespace ApplicationCore.Common.Abstractions.Caching
 {
     public interface ICacheService
     {

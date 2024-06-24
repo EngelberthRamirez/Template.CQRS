@@ -1,4 +1,4 @@
-﻿namespace ApplicationCore.Domain;
+﻿namespace ApplicationCore.Domain.Entities;
 public class Product
 {
     public int Id { get; set; } = default!;

@@ -1,16 +1,17 @@
 ﻿using System.Reflection;
 using System.Text;
+using ApplicationCore.Common.Abstractions.Caching;
 using ApplicationCore.Common.Abstractions.Data;
 using ApplicationCore.Common.Behaviours;
+using ApplicationCore.Infrastructure.Caching;
 using ApplicationCore.Infrastructure.Persistence;
+using ApplicationCore.Infrastructure.Quartz;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
-using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Caching;
-using PJENL.Template.CQRS.ApplicationCore.Infrastructure.Caching;
 using Quartz;
 
 namespace ApplicationCore;
@@ -61,6 +62,20 @@ public static class DependencyInjection
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Jwt:Key"]!))
                 };
             });
+
+        return services;
+    }
+
+    public static IServiceCollection AddQuartz(this IServiceCollection services, IConfiguration configuration)
+    {
+        services.AddQuartz();
+
+        services.AddQuartzHostedService(options =>
+        {
+            options.WaitForJobsToComplete = true;
+        });
+
+        services.ConfigureOptions<LoggingBackgroundJobSetup>();
 
         return services;
     }

@@ -1,11 +1,11 @@
 ﻿using System.Data;
 using ApplicationCore.Common.Abstractions.Data;
+using ApplicationCore.Common.Abstractions.Messaging;
 using ApplicationCore.Common.Exceptions;
-using ApplicationCore.Domain;
+using ApplicationCore.Domain.Entities;
 using Dapper;
 using FluentValidation;
 using MediatR;
-using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Messaging;
 
 namespace ApplicationCore.Features.Products.Commands;
 

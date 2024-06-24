@@ -1,8 +1,8 @@
 ﻿using System.Data;
 using ApplicationCore.Common.Abstractions.Data;
+using ApplicationCore.Common.Abstractions.Messaging;
 using Dapper;
 using MediatR;
-using PJENL.Template.CQRS.ApplicationCore.Common.Abstractions.Messaging;
 
 namespace ApplicationCore.Features.Products.Commands;
 

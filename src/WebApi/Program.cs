@@ -7,6 +7,7 @@ builder.Services.AddWebApi();
 builder.Services.AddApplicationCore();
 builder.Services.AddInfrastructure(builder.Configuration);
 builder.Services.AddSecurity(builder.Configuration);
+builder.Services.AddQuartz(builder.Configuration);
 
 var app = builder.Build();
 
