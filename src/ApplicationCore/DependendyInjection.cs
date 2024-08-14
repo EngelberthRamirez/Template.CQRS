@@ -5,6 +5,7 @@ using ApplicationCore.Common.Abstractions.Data;
 using ApplicationCore.Common.Behaviours;
 using ApplicationCore.Infrastructure.Caching;
 using ApplicationCore.Infrastructure.Persistence;
+using ApplicationCore.Infrastructure.Persistence.Context;
 using ApplicationCore.Infrastructure.Quartz;
 using FluentValidation;
 using Microsoft.AspNetCore.Authentication.JwtBearer;

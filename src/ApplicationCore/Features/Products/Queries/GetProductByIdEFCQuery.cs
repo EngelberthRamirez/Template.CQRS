@@ -1,6 +1,6 @@
 ﻿using ApplicationCore.Common.Exceptions;
 using ApplicationCore.Domain.Entities;
-using ApplicationCore.Infrastructure.Persistence;
+using ApplicationCore.Infrastructure.Persistence.Context;
 using AutoMapper;
 using MediatR;
 using MediatrExample.ApplicationCore.Common.Helpers;

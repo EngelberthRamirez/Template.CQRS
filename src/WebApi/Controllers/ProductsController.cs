@@ -19,14 +19,26 @@ public class ProductsController : ControllerBase
     }
 
     /// <summary>
-    /// Crea un producto nuevo
+    /// Crea un producto nuevo usando dapper
     /// </summary>
     /// <param name="command"></param>
     /// <returns></returns>
-    [HttpPost]
+    [HttpPost("dapper")]
     public async Task<IActionResult> CreateProduct([FromBody] CreateProductCommandParameters command)
     {
         await _mediator.Send(new CreateProductCommand { Parameters = command });
+        return Ok();
+    }
+
+    /// <summary>
+    /// Crea un producto nuevo usando efc
+    /// </summary>
+    /// <param name="command"></param>
+    /// <returns></returns>
+    [HttpPost("efc")]
+    public async Task<IActionResult> CreateProduct([FromBody] CreateProductEFCCommandParameters command)
+    {
+        await _mediator.Send(new CreateProductEFCCommand { Parameters = command });
         return Ok();
     }
 
