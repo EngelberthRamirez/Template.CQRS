@@ -6,17 +6,10 @@ namespace WebApi.Controllers
 {
     [ApiController]
     [Route("api/auth")]
-    public class AuthController : ControllerBase
+    public class AuthController(IMediator mediator) : ControllerBase
     {
-        private readonly IMediator _mediator;
-
-        public AuthController(IMediator mediator)
-        {
-            _mediator = mediator;
-        }
-
         [HttpPost]
-        public Task<TokenCommandResponse> Token([FromBody] TokenCommand command) =>
-            _mediator.Send(command);
+        public Task<GenerateToken.Response> Token([FromBody] GenerateToken.Request request) =>
+            mediator.Send(new GenerateToken.Command { Request = request });
     }
 }

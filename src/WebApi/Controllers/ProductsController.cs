@@ -9,14 +9,8 @@ namespace WebApi.Controllers;
 [Authorize]
 [ApiController]
 [Route("api/products")]
-public class ProductsController : ControllerBase
+public class ProductsController(IMediator mediator) : ControllerBase
 {
-    private readonly IMediator _mediator;
-
-    public ProductsController(IMediator mediator)
-    {
-        _mediator = mediator;
-    }
 
     /// <summary>
     /// Crea un producto nuevo usando dapper
@@ -24,9 +18,9 @@ public class ProductsController : ControllerBase
     /// <param name="command"></param>
     /// <returns></returns>
     [HttpPost("dapper")]
-    public async Task<IActionResult> CreateProduct([FromBody] CreateProductCommandParameters command)
+    public async Task<IActionResult> CreateProduct([FromBody] CreateProduct.Request request)
     {
-        await _mediator.Send(new CreateProductCommand { Parameters = command });
+        await mediator.Send(new CreateProduct.Command { Request = request });
         return Ok();
     }
 
@@ -36,9 +30,9 @@ public class ProductsController : ControllerBase
     /// <param name="command"></param>
     /// <returns></returns>
     [HttpPost("efc")]
-    public async Task<IActionResult> CreateProduct([FromBody] CreateProductEFCCommandParameters command)
+    public async Task<IActionResult> CreateProduct([FromBody] CreateProductEFC.Request request)
     {
-        await _mediator.Send(new CreateProductEFCCommand { Parameters = command });
+        await mediator.Send(new CreateProductEFC.Command { Request = request });
         return Ok();
     }
 
@@ -48,9 +42,18 @@ public class ProductsController : ControllerBase
     /// <param name="command"></param>
     /// <returns></returns>
     [HttpPut("{id:int}")]
-    public async Task<IActionResult> UpdateProduct([FromRoute] int id, [FromBody] UpdateProductCommandParameters command)
+    public async Task<IActionResult> UpdateProduct([FromRoute] int id, [FromBody] UpdateProduct.Payload request)
     {
-        await _mediator.Send(new UpdateProductCommand { Id = id, Parameters = command });
+        var command = new UpdateProduct.Command
+        {
+            Request = new UpdateProduct.Request
+            {
+                Id = id,
+                Payload = request
+            }
+        };
+
+        await mediator.Send(command);
         return NoContent();
     }
 
@@ -62,16 +65,22 @@ public class ProductsController : ControllerBase
     [HttpDelete("{id:int}")]
     public async Task<IActionResult> DeleteProduct(int id)
     {
-        await _mediator.Send(new DeleteProductCommand { Id = id });
+        var command = new DeleteProduct.Command
+        {
+            Request = new DeleteProduct.Request { Id = id }
+        };
+
+        await mediator.Send(command);
         return NoContent();
     }
+
 
     /// <summary>
     /// Consulta los productos
     /// </summary>
     /// <returns></returns>
     [HttpGet]
-    public async Task<List<GetProductsQueryResponse>> GetProducts() => await _mediator.Send(new GetProductsQuery());
+    public async Task<List<GetProducts.Response>> GetProducts() => await mediator.Send(new GetProducts.Query());
 
     /// <summary>
     /// Consulta un producto por su ID usando Dapper
@@ -79,8 +88,8 @@ public class ProductsController : ControllerBase
     /// <param name="query"></param>
     /// <returns></returns>
     [HttpGet("{id}/dapper")]
-    public async Task<GetProductByIdQueryResponse> GetProductById(string id) =>
-        await _mediator.Send(new GetProductByIdQuery { Id = id });
+    public async Task<GetProductById.Response> GetProductById(string id) =>
+        await mediator.Send(new GetProductById.Query { Id = id });
 
     /// <summary>
     /// Consulta un producto por su ID usando Entity Framework Core
@@ -89,5 +98,5 @@ public class ProductsController : ControllerBase
     /// <returns></returns>
     [HttpGet("{id}/efc")]
     public async Task<GetProductByIdEFCQueryResponse> GetProductByIdEFC(string id) =>
-        await _mediator.Send(new GetProductByIdEFCQuery { Id = id });
+        await mediator.Send(new GetProductByIdEFCQuery { Id = id });
 }

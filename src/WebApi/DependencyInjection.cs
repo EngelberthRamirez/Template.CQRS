@@ -40,6 +40,8 @@ public static class DependencyInjection
                     Array.Empty<string>()
                 }
             });
+
+            c.CustomSchemaIds(type => type.FullName);
         });
 
         services.AddControllers(options =>
