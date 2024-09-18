@@ -41,7 +41,7 @@ public static class DependencyInjection
                 }
             });
 
-            c.CustomSchemaIds(type => type.FullName);
+            c.CustomSchemaIds(type => type.FullName.Replace("+", "."));
         });
 
         services.AddControllers(options =>
